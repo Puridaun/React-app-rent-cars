@@ -79,7 +79,7 @@ Breakpoints:
     --stepper-line: #8ca19e;
     --stepper-bg: #8ca19e;
     --stepper-text: #8ca19e;
-    --background-primary: #000000;
+    --background-primary: #222230;
     --car-card-bg: (var(--background-primary));
     --text-color-on-primary-bg: #F4F4F9;
     --button-bg-color: #B8DBD9;
@@ -731,6 +731,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .car-benefit-card span {
     font-size: 32px;
     transition: transform 0.3s ease;
+    color: var(--text-color-on-primary-bg);
 }
 
 .car-benefit-card:hover span,
