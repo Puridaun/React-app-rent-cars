@@ -32,7 +32,7 @@ const Navbar = () => {
           <div className="navbar-navigation">
             <ModeToggle />
             <img
-              src="./src/assets/hamburger menu.svg"
+              src="/images/hamburger menu.svg"
               className="hamburger-menu-icon"
               alt="hamburger-menu"
             />
