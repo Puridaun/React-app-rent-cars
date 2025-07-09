@@ -308,7 +308,7 @@ a:hover {
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-    background-image: url('./src/assets/calendar icon.svg');
+    background-image: url('/images/calendar icon.svg');
     fill: var(--border-color);
     border-radius: 4px;
     background-size: contain;
