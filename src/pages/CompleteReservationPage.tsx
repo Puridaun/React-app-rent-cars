@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import React from "react";
 import { benefits } from "./ReserveCarPage";
 import HorizontalNonLinearStepper from "@/components/HorizontalNonLinearStepper";
+import apiClient from "@/components/API";
 
 interface InputsForm {
   labelName: string;
@@ -113,7 +114,6 @@ const CompleteReservationPage: React.FC = () => {
       if (result.success) {
         alert("Your message was sent successfully");
         console.log("Success", result);
-        // Consider resetting the form here
         event.currentTarget.reset();
       } else {
         alert("Failed to send message. Please try again.");
@@ -127,19 +127,15 @@ const CompleteReservationPage: React.FC = () => {
     const formattedDate = new Date(rentInputData.returnDate).toISOString();
     const isCarPromoted = false;
 
-    await fetch(
-      `http:backend-database-production-cabe.up.railway.app/api/v1/rent-cars/${car.id}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          available_from: formattedDate,
-          is_promoted: isCarPromoted,
-        }),
-      }
-    );
+    // ✅ Fixed - use apiClient instead of hardcoded fetch
+    try {
+      await apiClient.put(`/${car.id}`, {
+        available_from: formattedDate,
+        is_promoted: isCarPromoted,
+      });
+    } catch (error) {
+      console.error("Error updating car:", error);
+    }
   };
 
   return (
