@@ -77,6 +77,7 @@ const AvailableCarsPage: React.FC = () => {
           <div key={index} className="available-car-card">
             <div className="available-car-image">
               <img src={car.image} alt="available-car-image" />
+              {/* add image address from database */}
             </div>
             <div className="available-car-infos">
               <h3>{`${car.brand} ${car.model}`}</h3>
