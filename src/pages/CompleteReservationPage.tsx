@@ -126,16 +126,20 @@ const CompleteReservationPage: React.FC = () => {
 
     const formattedDate = new Date(rentInputData.returnDate).toISOString();
     const isCarPromoted = false;
-    await fetch(`http://127.0.0.1:3000/api/v1/rent-cars/${car.id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        available_from: formattedDate,
-        is_promoted: isCarPromoted,
-      }),
-    });
+
+    await fetch(
+      `http:backend-database-production-cabe.up.railway.app/api/v1/rent-cars/${car.id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          available_from: formattedDate,
+          is_promoted: isCarPromoted,
+        }),
+      }
+    );
   };
 
   return (
