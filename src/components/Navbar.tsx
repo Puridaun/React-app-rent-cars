@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <div className="navbar-container">
       <div className="navbar-content">
-        <img src="/images/logo.jpg" alt="Logo" />
+        <img src="/images/Site-logo.png" alt="Logo" />
         {screenSize > 540 ? (
           <div className="navbar-navigation">
             <ModeToggle />
