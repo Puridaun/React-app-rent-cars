@@ -2,14 +2,15 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 import { benefits } from "../pages/ReserveCarPage";
 import { BenefitAndFeaturesPrice } from "../pages/ReserveCarPage";
-import { RentInputData } from "./HeroHeader";
 import { Car } from "./ShowCarsSection";
+import { RentInputData } from "@/pages/HomePage";
 
 interface ReservedCarInfoProps {
   getBenefitAndFeaturesPrice: BenefitAndFeaturesPrice;
   rentInputData: RentInputData;
   car: Car;
   rentalDays: number;
+  text: string;
 }
 
 // -------------------Start COMOPONENT --------------------------------------------------------------------------
@@ -19,6 +20,7 @@ const ReservedCarInfo: React.FC<ReservedCarInfoProps> = ({
   rentInputData,
   car,
   rentalDays,
+  text,
 }) => {
   const navigate = useNavigate();
   const toCompleteReservationPage = () => {
@@ -92,7 +94,7 @@ const ReservedCarInfo: React.FC<ReservedCarInfoProps> = ({
             toCompleteReservationPage();
           }}
         >
-          Next step
+          {text}
         </button>
       </div>
     </div>

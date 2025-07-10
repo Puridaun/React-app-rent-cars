@@ -32,9 +32,9 @@ const Navbar = () => {
           // Desktop Navigation
           <div className="navbar-navigation">
             <ModeToggle />
-            <a href="/">Acasa</a>
-            <a href="">Recomandari</a>
-            <a href="">Contact</a>
+            <a href="/">HOME</a>
+            <a href="">RECOMENDED</a>
+            <a href="">CONTACT</a>
           </div>
         ) : (
           // Mobile Navigation with Dropdown
@@ -50,13 +50,13 @@ const Navbar = () => {
                   <NavigationMenuContent className="absolute right-0 left-auto origin-top-right !mt-2 w-32 ">
                     <div className="gap-2 w-fit ">
                       <NavigationMenuLink href="/" className="w-auto w-fit">
-                        <div className="text-sm font-medium ">Acasa</div>
+                        <div className="text-sm font-medium ">HOME</div>
                       </NavigationMenuLink>
                       <NavigationMenuLink href="" className="w-auto w-fit">
-                        <div className="text-sm font-medium ">Recomandari</div>
+                        <div className="text-sm font-medium ">RECOMANDED</div>
                       </NavigationMenuLink>
                       <NavigationMenuLink href="" className="w-auto w-fit">
-                        <div className="text-sm font-medium ">Contact</div>
+                        <div className="text-sm font-medium ">CONTACT</div>
                       </NavigationMenuLink>
                     </div>
                   </NavigationMenuContent>

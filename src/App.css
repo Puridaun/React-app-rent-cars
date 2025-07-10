@@ -360,18 +360,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-    .recomended-cars-container {
-        flex-direction: column;
-    }
-}
-
-@media (min-width: 740px) {
-    .recomended-cars-container img {
-        max-width: 400px;
-
-    }
-}
 
 .recomended-car-info {
     display: flex;
@@ -399,15 +387,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-bottom: 16px;
 }
 
-@media (max-width: 540px) {
-    .recomended-car-info ul {
-        grid-template-columns: 1fr;
-    }
 
-    .navbar-container img {
-        width: 88px;
-    }
-}
 
 .recomended-car-info li {
     list-style: none;
@@ -568,16 +548,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-weight: 600;
 }
 
-@media (max-width: 540px) {
-    .reserve-car-price-tag {
-        flex-direction: row;
-    }
-}
 
 
 .price-tag {
     color: var(--text-color-on-primary-bg);
-    font-weight: 600;
+    font-weight: 400;
     font-size: 24px;
     padding: 4px;
     overflow: hidden;
@@ -680,70 +655,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 }
 
-@media (max-width: 768px) {
-    .reserve-car-card {
-        flex-direction: column;
-    }
 
-    .reserve-car-image-and-price {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .reserve-car-price-tag {
-        font-weight: 600;
-    }
-
-
-
-    .price-tag {
-
-        font-weight: 600;
-        font-size: 24px;
-        padding: 0px;
-        overflow: hidden;
-    }
-
-    .reserve-car-last-info {
-        padding: 48px;
-    }
-
-}
-
-@media (max-width: 540px) {
-    .reserve-car-features {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(140px, 2fr));
-        gap: 24px;
-    }
-
-    .car-feature-card {
-        width: 160px;
-        height: 96px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-        border: 1px solid var(--border-color);
-        border-radius: 16px;
-        overflow: hidden;
-    }
-
-    .car-feature-card p {
-        font-size: 16px
-    }
-
-    .car-feature-card span {
-        font-size: 20px;
-        font-weight: 600;
-    }
-
-
-}
 
 .car-benefit-card span {
     font-size: 32px;
@@ -874,55 +786,94 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* ---------------------------------Complete Reservation-------------------------- */
 
-.complete-reservation-form-inputs {
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    width: 100%;
-
-}
-
-.customer-info-inputs {
-    width: 480px;
+.complete-reservation-form {
     display: flex;
-
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
 }
 
-.btn-primary {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-    color: var(--surface-primary);
-    border: none;
-    padding: 14px 28px;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 15px;
-    transition: all 0.3s ease;
-    margin-top: 16px;
+.form-data {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-data div {
     width: 100%;
     position: relative;
-    overflow: hidden;
+    gap: 16px;
 }
 
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
+
+.form-data label {
+    position: absolute;
+    left: 16px;
+    bottom: 38px;
+    padding-left: 8px;
+    padding-right: 4px;
+    background-color: var(--background-primary);
+    color: var(--text-color-on-primary-bg);
+    font-weight: 500;
+    font-size: 18px;
 }
 
-.customer-message {
-    margin-top: 24px;
-    margin-bottom: 24px;
-    width: 480px;
-    border: 1px solid var(--border-medium);
+.form-data input {
+    border: 1px solid var(--border-color);
+    width: 100%;
     border-radius: 8px;
-    background-color: var(--background-color);
-    height: 160px;
-    padding: 16px;
+    color: var(--text-color-on-primary-bg);
+    padding: 8px;
+    font-size: 18px;
 }
 
-.customer-form {
-    margin-top: 40px;
+.form-data .age-input {
+    width: 35%;
 }
+
+.text-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 80%;
+}
+
+.text-message label {
+    position: absolute;
+    left: 16px;
+    top: -20px;
+    padding-left: 8px;
+    padding-right: 4px;
+    background-color: var(--background-primary);
+    color: var(--text-color-on-primary-bg);
+    font-weight: 500;
+    font-size: 18px;
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-color-on-primary-bg);
+    padding: 8px;
+    font-size: 18px;
+}
+
+
+.reserved-car-last-info {
+    width: 100%;
+
+}
+
+.reserved-car-last-info img {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 /* 
 ---break---
@@ -967,16 +918,112 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     --color-sidebar-ring: var(--sidebar-ring);
 }
 
-/* 
----break---
-*/
 
-@layer base {
-    * {
-        @apply border-border outline-ring/50;
+
+
+/* --------------------------Media queries------------ */
+
+@media (max-width: 540px) {
+    .recomended-car-info ul {
+        grid-template-columns: 1fr;
     }
 
-    body {
-        @apply bg-background text-foreground;
+    .navbar-container img {
+        width: 88px;
+    }
+
+    .reserve-car-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 2fr));
+        gap: 24px;
+    }
+
+    .car-feature-card {
+        width: 160px;
+        height: 96px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    .car-feature-card p {
+        font-size: 16px
+    }
+
+    .car-feature-card span {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .form-data label {
+
+        bottom: 34px;
+        font-size: 14px;
+    }
+
+    .form-data input {
+
+        font-size: 14px;
+    }
+
+    .text-message label {
+
+        top: -16px;
+        font-size: 14px;
+    }
+
+    .text-message textarea {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .recomended-cars-container {
+        flex-direction: column;
+    }
+
+    .recomended-cars-container img {
+        max-width: 400px;
+
+    }
+
+    .reserve-car-card {
+        flex-direction: column;
+    }
+
+    .reserve-car-image-and-price {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .reserve-car-price-tag {
+        font-weight: 500;
+    }
+
+
+
+    .price-tag {
+
+        font-weight: 400;
+        font-size: 22px;
+        padding: 0px;
+        overflow: hidden;
+    }
+
+    .reserve-car-last-info {
+        padding: 48px;
     }
 }

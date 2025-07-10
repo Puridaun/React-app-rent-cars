@@ -164,6 +164,7 @@ const ReserveCarPage: React.FC = () => {
           rentInputData={rentInputData}
           car={car}
           rentalDays={rentalDays}
+          text="Next Step"
         />
       </section>
     </div>

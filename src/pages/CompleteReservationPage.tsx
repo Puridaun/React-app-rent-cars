@@ -3,44 +3,15 @@ import React from "react";
 import { benefits } from "./ReserveCarPage";
 import HorizontalNonLinearStepper from "@/components/ui/HorizontalNonLinearStepper";
 import apiClient from "@/components/API";
+import { Label } from "@radix-ui/react-dropdown-menu";
+import { Input } from "@mui/material";
+import ReservedCarInfo from "@/components/ReserveCarInfo";
 
 interface InputsForm {
   labelName: string;
   inputName: string;
   inputType: string;
 }
-const formInputs: InputsForm[] = [
-  {
-    labelName: "First Name",
-    inputName: "first-name",
-    inputType: "text",
-  },
-  {
-    labelName: "Last Name",
-    inputName: "last-name",
-    inputType: "text",
-  },
-  {
-    labelName: "Email",
-    inputName: "email",
-    inputType: "email",
-  },
-  {
-    labelName: "Nr. telefon",
-    inputName: "nr-telefon",
-    inputType: "number",
-  },
-  {
-    labelName: "Varsta",
-    inputName: "varsta",
-    inputType: "number",
-  },
-  {
-    labelName: "Nr. permis",
-    inputName: "nr-permis",
-    inputType: "number",
-  },
-];
 
 // available_from: "2025-06-24T21:00:00.000Z";
 // brand: "Ford";
@@ -139,29 +110,49 @@ const CompleteReservationPage: React.FC = () => {
   };
 
   return (
-    <section className="std-section customer-form">
+    <section className="std-section">
       <HorizontalNonLinearStepper
         currentStep={stepPage} // You're on "Select car" step
         completedSteps={car ? [0, 1] : [-1, 0]} // Mark step 0 as completed if car is selected
       />
       <form onSubmit={onSubmit} className="complete-reservation-form">
-        <div className="complete-reservation-form-inputs">
-          {formInputs.map((item: InputsForm, index: number) => (
-            <div key={index} className="form-inputs customer-info-inputs">
-              <label htmlFor="">{item.labelName}</label>
-              <input
-                placeholder={item.labelName}
-                name={item.inputName}
-                type={item.inputType}
-              ></input>
+        <div className="form-data ">
+          {/* Last and First Name */}
+          <div className="flex  ">
+            <div className="flex flex-col">
+              <label htmlFor="last-name">Last Name</label>
+              <input id="last-name" name="last-name" type="text"></input>
             </div>
-          ))}
+            <div className="flex flex-col">
+              <label htmlFor="first-name">First Name</label>
+              <input id="first-name" name="first-name" type="text"></input>
+            </div>
+          </div>
+          {/* Email */}
+          <div className="flex flex-col">
+            <label htmlFor="email">Email</label>
+            <input id="email" name="email" type="email"></input>
+          </div>
+          {/* Age and number of driver id */}
+          <div className="flex ">
+            <div className="flex flex-col age-input">
+              <label htmlFor="age">Age</label>
+              <input id="age" name="age" type="number"></input>
+            </div>
+            <div className="flex flex-col">
+              <label htmlFor="driver-id">Driver Id</label>
+              <input id="driver-id" name="driver-id" type="number"></input>
+            </div>
+          </div>
         </div>
-        <textarea
-          className="customer-message"
-          placeholder="Your message..."
-        ></textarea>
-        <div className="reserved-car-last-info">
+        <div className="text-message">
+          <label htmlFor="message">Message</label>
+          <textarea
+            className="customer-message"
+            placeholder="Your message..."
+          ></textarea>
+        </div>
+        {/* <div className="reserved-car-last-info">
           <img src={car.image} alt="reserved-car-image" />
           <div>
             <div className="reserved-car-info">
@@ -174,13 +165,15 @@ const CompleteReservationPage: React.FC = () => {
               {clickedBenefit ? (
                 <div className="benefits-list">
                   <span>{benefits[clickedBenefit].name}</span>
-                  <span>{benefits[clickedBenefit].price}$</span>
+                  <span>
+                    {benefits[clickedBenefit].price} {car.currency}
+                  </span>
                 </div>
               ) : null}
               {selectedFeatures.map((feature: number, index: number) => (
                 <div key={index} className="features-list">
                   <span>{car.features[feature]}</span>
-                  <span>{car.price}$</span>
+                  <span>5 {car.currency}</span>
                 </div>
               ))}
             </div>
@@ -197,7 +190,14 @@ const CompleteReservationPage: React.FC = () => {
         </div>
         <button type="submit" className="btn-primary">
           Rezerva
-        </button>
+        </button> */}
+        <ReservedCarInfo
+          getBenefitAndFeaturesPrice={getBenefitAndFeaturesPrice}
+          rentInputData={rentInputData}
+          car={car}
+          rentalDays={rentalDays}
+          text={"Reserve"}
+        />
       </form>
     </section>
   );
