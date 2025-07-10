@@ -5,7 +5,7 @@ import ReserveCarPage from "./pages/ReserveCarPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
 import CompleteReservationPage from "./pages/CompleteReservationPage";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/ui/theme-provider";
 
 const router = createBrowserRouter([
   {

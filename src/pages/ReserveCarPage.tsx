@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import ReserveCarInfo from "../components/ReserveCarInfo";
 import React from "react";
-import HorizontalNonLinearStepper from "@/components/HorizontalNonLinearStepper";
+import HorizontalNonLinearStepper from "@/components/ui/HorizontalNonLinearStepper";
 
 export interface Benefit {
   name: string;

@@ -6,7 +6,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"; // Use your custom component
-import { ModeToggle } from "./mode-toggle";
+import { ModeToggle } from "./ui/mode-toggle";
 import { useEffect, useState } from "react";
 import { Menu } from "lucide-react"; // For mobile menu icon
 

@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import React from "react";
 import { benefits } from "./ReserveCarPage";
-import HorizontalNonLinearStepper from "@/components/HorizontalNonLinearStepper";
+import HorizontalNonLinearStepper from "@/components/ui/HorizontalNonLinearStepper";
 import apiClient from "@/components/API";
 
 interface InputsForm {

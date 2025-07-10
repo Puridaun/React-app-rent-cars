@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import React from "react";
 import apiClient from "../components/API";
 import { Car } from "../components/ShowCarsSection";
-import HorizontalNonLinearStepper from "@/components/HorizontalNonLinearStepper";
+import HorizontalNonLinearStepper from "@/components/ui/HorizontalNonLinearStepper";
 
 // location: "Bucharest";
 // rentDate: "2025-06-27";
