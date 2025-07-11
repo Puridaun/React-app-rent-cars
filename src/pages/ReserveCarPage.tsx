@@ -19,18 +19,19 @@ export interface BenefitAndFeaturesPrice {
 
 export const benefits: Benefit[] = [
   {
-    name: "Protectie de baza (CDW)",
-    description: `Responsabilitatea dvs. in caz de dauna sau furt este egal cu valoarea depozitului`,
+    name: "Basic protection (CDW)",
+    description: `Your liability in case of damage or theft is equal to the value of the deposit.`,
     price: 0,
   },
   {
-    name: "Protectie medie (SCDW)",
-    description: `Responsabilitatea dvs. in caz de dauna sau furt este egal cu valoarea depozitului`,
+    name: "Medium protection (SCDW)",
+    description: `Your liability in case of damage or theft is equal to the value of the deposit.`,
     price: 50,
   },
   {
-    name: "Protectie totala (SCDW+)",
-    description: `Responsabilitatea dvs. in caz de dauna sau furt este egal cu valoarea depozitului`,
+    name: "Total protection (SCDW+)",
+    description: `
+Your liability in case of damage or theft is equal to the value of the deposit.`,
     price: 90,
   },
 ];
@@ -104,10 +105,10 @@ const ReserveCarPage: React.FC = () => {
       <section className="reserve-car-container">
         <div className="reserve-car-card">
           <ul>
-            <li>Asistenta rutiera 24/7</li>
-            <li>Anulare gratuita</li>
-            <li>Fara plata in avans</li>
-            <li>Modele noi disponibile pentru inchiriere auto</li>
+            <li>24/7 roadside assistance</li>
+            <li>Free cancellation</li>
+            <li>No advance payment</li>
+            <li>New models available for car rental</li>
           </ul>
           <div className="reserve-car-image-and-price">
             <img src={car.image} alt="to-reserve-car-image" />
@@ -115,12 +116,14 @@ const ReserveCarPage: React.FC = () => {
               <span className="price-tag">
                 {`${car.price * rentalDays} ${car.currency}`}
               </span>
-              <span className="nr-days">{rentalDays} zile</span>
+              <span className="nr-days">
+                {rentalDays} {rentalDays > 1 ? "DAYS" : "DAY"}
+              </span>
             </div>
           </div>
         </div>
 
-        <h3>Protectie in caz de dauna</h3>
+        <h3>Protection in case of damage</h3>
         <div key={car.id} className="reserve-car-benefits">
           {benefits.map((benefit: Benefit, index: number) => (
             <button
@@ -142,7 +145,7 @@ const ReserveCarPage: React.FC = () => {
           ))}
         </div>
 
-        <h3>Echipamente aditionale</h3>
+        <h3>Additional equipment</h3>
         <div key={car.id + 1} className="reserve-car-features">
           {car.features.map((feature: string[], index: number) => (
             <div className="feature-container">

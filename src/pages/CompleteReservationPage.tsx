@@ -17,6 +17,16 @@ const CompleteReservationPage: React.FC = () => {
   const getBenefitAndFeaturesPrice = location.state?.getBenefitAndFeaturesPrice;
   const rentalDays = location.state?.rentalDays;
 
+  const getCompletedSteps = () => {
+    if (!car) return [-1, 0];
+
+    // If on final step (stepPage = 2), mark all previous steps as completed
+    if (stepPage === 2) {
+      return [0, 1, 2]; //Mark step 2 as completed too
+    }
+    return [0, 1]; // Normal case
+  };
+
   const [inputErrors, setInputErrors] = useState({
     firstName: false,
     lastName: false,
@@ -71,7 +81,7 @@ const CompleteReservationPage: React.FC = () => {
     <section className="std-section">
       <HorizontalNonLinearStepper
         currentStep={stepPage} // You're on "Select car" step
-        completedSteps={car ? [0, 1] : [-1, 0]} // Mark step 0 as completed if car is selected
+        completedSteps={getCompletedSteps()} // Mark step 0 as completed if car is selected
       />
       <form onSubmit={onSubmit} className="complete-reservation-form">
         <div className="form-data ">
@@ -83,7 +93,7 @@ const CompleteReservationPage: React.FC = () => {
                 id="last-name"
                 name="last-name"
                 type="text"
-                onChange={handleNameChange}
+                onBlur={handleNameChange}
                 className={inputErrors.lastName ? "input-error" : ""}
               ></input>
               {inputErrors.lastName ? (
@@ -98,7 +108,7 @@ const CompleteReservationPage: React.FC = () => {
                 id="first-name"
                 name="first-name"
                 type="text"
-                onChange={handleNameChange}
+                onBlur={handleNameChange}
                 className={inputErrors.firstName ? "input-error" : ""}
               ></input>
               {inputErrors.firstName ? (
@@ -115,7 +125,7 @@ const CompleteReservationPage: React.FC = () => {
               id="email"
               name="email"
               type="email"
-              onChange={handleNameChange}
+              onBlur={handleNameChange}
               className={inputErrors.email ? "input-error" : ""}
             ></input>
             {inputErrors.email ? (
@@ -130,7 +140,7 @@ const CompleteReservationPage: React.FC = () => {
                 id="age"
                 name="age"
                 type="number"
-                onChange={handleNameChange}
+                onBlur={handleNameChange}
                 className={inputErrors.age ? "input-error" : ""}
               ></input>
               {inputErrors.age ? (
@@ -143,7 +153,7 @@ const CompleteReservationPage: React.FC = () => {
                 id="driver-id"
                 name="driver-id"
                 type="number"
-                onChange={handleNameChange}
+                onBlur={handleNameChange}
                 className={inputErrors.driverId ? "input-error" : ""}
               ></input>
               {inputErrors.driverId ? (

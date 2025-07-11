@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { RentInputData } from "@/pages/HomePage";
+import { Skeleton } from "@mui/material";
+
 interface ShowCarsSectionProps {
   rentInputData: RentInputData | null;
 }
@@ -42,6 +44,7 @@ const ShowCarsSection: React.FC<ShowCarsSectionProps> = ({ rentInputData }) => {
   const navigate = useNavigate();
 
   const [promotedCars, setPromotedCars] = useState<Car[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const handleReserveButton = (car: Car): void => {
     navigate(`/reserve-car`, { state: { car, rentInputData } });
@@ -50,15 +53,34 @@ const ShowCarsSection: React.FC<ShowCarsSectionProps> = ({ rentInputData }) => {
   useEffect(() => {
     const fetchPromotedCars = async () => {
       try {
+        setIsLoading(true);
         const cars = await getPromotedCars();
         setPromotedCars(cars);
       } catch (error) {
         console.error("Error fetching promoted cars:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchPromotedCars();
   }, []);
+
+  if (isLoading) {
+    return (
+      <section className="std-section">
+        <div className="recomended-cars-container">
+          <Skeleton variant="rectangular" width="320px" height="200px" />
+          <div className="recomended-car-info">
+            <Skeleton variant="text" width="60%" height="32px" />
+            <Skeleton variant="text" width="40%" height="20px" />
+            <Skeleton variant="rectangular" width="100%" height="100px" />
+            <Skeleton variant="rectangular" width="120px" height="40px" />
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="std-section">
@@ -67,14 +89,14 @@ const ShowCarsSection: React.FC<ShowCarsSectionProps> = ({ rentInputData }) => {
           <img src={car.image} alt="car-image" />
           <div className="recomended-car-info">
             <h2>{`${car.brand} ${car.model}`}</h2>
-            <h4>Beneficii</h4>
+            <h4>Benefits</h4>
             <ul>
-              <li>TVA inclus si deductibil</li>
-              <li>Asistenta rutiera 24/7</li>
-              <li>Anulare gratuita</li>
-              <li>Fara plata in avans</li>
-              <li>Kilometrii nelimitati</li>
-              <li>Modele noi</li>
+              <li>TVA included and deductible</li>
+              <li>24/7 roadside assistance</li>
+              <li>Free cancellation</li>
+              <li>No advance payment</li>
+              <li>Unlimited kilometers</li>
+              <li>New models</li>
             </ul>
             <button
               className="home-page-button"
@@ -83,7 +105,7 @@ const ShowCarsSection: React.FC<ShowCarsSectionProps> = ({ rentInputData }) => {
                 handleReserveButton(car);
               }}
             >
-              Rezerva acum!
+              Book now!
             </button>
           </div>
         </div>

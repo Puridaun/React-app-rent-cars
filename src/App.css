@@ -2,6 +2,10 @@
 /* 
 ---break---
 */
+@custom-variant dark (&:is(.dark *));
+/* 
+---break---
+*/
 /* @custom-variant dark (&:is(.dark *)); */
 
 /* 
@@ -43,39 +47,39 @@ Breakpoints:
     --car-card-bg: #F6F6F6;
 
     /* shadcn/ui variables */
-    --background: #FFFFFF;
-    --foreground: #1D1D1F;
-    --card: #FFFFFF;
-    --card-foreground: #1D1D1F;
-    --popover: #FFFFFF;
-    --popover-foreground: #1D1D1F;
-    --primary: #007AFF;
-    --primary-foreground: #FFFFFF;
-    --secondary: #F6F6F6;
-    --secondary-foreground: #1D1D1F;
-    --muted: #F6F6F6;
-    --muted-foreground: #8E8E93;
-    --accent: #F6F6F6;
-    --accent-foreground: #1D1D1F;
-    --destructive: #FF3B30;
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
     --destructive-foreground: #FFFFFF;
-    --border: #8E8E93;
-    --input: #F6F6F6;
-    --ring: #007AFF;
-    --chart-1: #007AFF;
-    --chart-2: #34C759;
-    --chart-3: #FF9500;
-    --chart-4: #FF3B30;
-    --chart-5: #8E8E93;
-    --radius: 0.75rem;
-    --sidebar: #FFFFFF;
-    --sidebar-foreground: #1D1D1F;
-    --sidebar-primary: #007AFF;
-    --sidebar-primary-foreground: #FFFFFF;
-    --sidebar-accent: #F6F6F6;
-    --sidebar-accent-foreground: #1D1D1F;
-    --sidebar-border: #8E8E93;
-    --sidebar-ring: #007AFF;
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
 }
 
 .dark {
@@ -100,38 +104,38 @@ Breakpoints:
     --selected-card-border: #007AFF;
 
     /* shadcn/ui variables */
-    --background: #1D1D1F;
-    --foreground: #FFFFFF;
-    --card: #1D1D1F;
-    --card-foreground: #FFFFFF;
-    --popover: #1D1D1F;
-    --popover-foreground: #FFFFFF;
-    --primary: #007AFF;
-    --primary-foreground: #FFFFFF;
-    --secondary: #2C2C2E;
-    --secondary-foreground: #FFFFFF;
-    --muted: #2C2C2E;
-    --muted-foreground: #8E8E93;
-    --accent: #2C2C2E;
-    --accent-foreground: #FFFFFF;
-    --destructive: #FF453A;
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
     --destructive-foreground: #FFFFFF;
-    --border: #8E8E93;
-    --input: #2C2C2E;
-    --ring: #007AFF;
-    --chart-1: #007AFF;
-    --chart-2: #30D158;
-    --chart-3: #FF9500;
-    --chart-4: #FF453A;
-    --chart-5: #8E8E93;
-    --sidebar: #1D1D1F;
-    --sidebar-foreground: #FFFFFF;
-    --sidebar-primary: #007AFF;
-    --sidebar-primary-foreground: #FFFFFF;
-    --sidebar-accent: #2C2C2E;
-    --sidebar-accent-foreground: #FFFFFF;
-    --sidebar-border: #8E8E93;
-    --sidebar-ring: #007AFF;
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
 }
 
 @theme inline {
@@ -253,19 +257,15 @@ header {
     font-weight: 600;
 }
 
-
 .input-error {
     border: 2px solid var(--error) !important;
 }
-
 
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
-
 
 /* -----------------------Modern Navbar------------------ */
 
@@ -279,8 +279,6 @@ input[type=number]::-webkit-inner-spin-button {
     padding: 0;
     transition: all 0.3s ease;
 }
-
-
 
 .hamburger-menu-icon {
     width: 40px !important;
@@ -410,6 +408,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .recomended-cars-container img {
+    padding: 8px;
     max-width: 320px;
     border-radius: 16px;
 }
@@ -417,7 +416,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .recomended-cars-container:hover img {
     transform: scale(1.1);
 }
-
 
 .recomended-car-info {
     display: flex;
@@ -444,8 +442,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     grid-template-columns: 1fr 1fr;
     margin-bottom: 16px;
 }
-
-
 
 .recomended-car-info li {
     list-style: none;
@@ -585,8 +581,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     justify-content: center;
 }
 
-
-
 .reserve-car-card img {
     width: 70%;
     border-radius: 16px;
@@ -606,8 +600,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-weight: 600;
 }
 
-
-
 .price-tag {
     color: var(--text-color-on-primary-bg);
     font-weight: 400;
@@ -620,14 +612,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: var(--text-color-on-primary-bg);
 }
 
-
-
 .reserve-car-card ul {
     display: grid;
     grid-template-columns: 1fr;
 }
-
-
 
 .reserve-car-card li {
     list-style: none;
@@ -697,7 +685,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: var(--text-color-on-primary-bg);
 }
 
-
 .car-feature-card:hover {
     box-shadow: var(--shadow-lg);
     transform: translateY(-6px);
@@ -712,8 +699,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-weight: 600;
 
 }
-
-
 
 .car-benefit-card span {
     font-size: 32px;
@@ -877,9 +862,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding-left: 8px;
     padding-right: 4px;
     background-color: var(--background-primary);
+    background-clip: padding-box;
+    border-radius: 4px;
     color: var(--text-color-on-primary-bg);
     font-weight: 500;
     font-size: 18px;
+    line-height: 1;
+
 }
 
 .form-data input {
@@ -913,6 +902,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: var(--text-color-on-primary-bg);
     font-weight: 500;
     font-size: 18px;
+    line-height: 1;
 }
 
 textarea {
@@ -923,7 +913,6 @@ textarea {
     padding: 8px;
     font-size: 18px;
 }
-
 
 .reserved-car-last-info {
     width: 100%;
@@ -936,15 +925,9 @@ textarea {
     margin-right: auto;
 }
 
-
 /* 
 ---break---
 */
-
-
-
-
-
 
 /* --------------------------Media queries------------ */
 
@@ -1004,13 +987,7 @@ textarea {
         font-size: 14px;
     }
 
-
 }
-
-
-
-
-
 
 @media (max-width: 768px) {
     .recomended-cars-container {
@@ -1018,7 +995,7 @@ textarea {
     }
 
     .recomended-cars-container img {
-        max-width: 400px;
+        max-width: 320px;
 
     }
 
@@ -1047,7 +1024,6 @@ textarea {
         width: 100%;
     }
 
-
     .price-tag {
 
         font-weight: 400;
@@ -1063,5 +1039,19 @@ textarea {
     .data-inputs {
         flex-direction: column;
         row-gap: 16px;
+    }
+}
+
+/* 
+---break---
+*/
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+
+    body {
+        @apply bg-background text-foreground;
     }
 }

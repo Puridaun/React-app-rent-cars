@@ -41,7 +41,7 @@ const HeroHeader: React.FC<HeroHeaderProps> = ({
           <form onSubmit={handleRentForm} className="hero-container-form">
             <div className="hero-form-inputs flex flex-col">
               <label htmlFor="location" className="font-semibold">
-                Locatie preluare
+                Pick-up location
               </label>
               <input
                 id="location"
@@ -55,7 +55,7 @@ const HeroHeader: React.FC<HeroHeaderProps> = ({
             </div>
             <div className="hero-form-inputs flex flex-col">
               <label htmlFor="rent-date" className="font-semibold">
-                Data de inchiriere
+                Rental date
               </label>
               <input
                 id="rent-date"
@@ -71,7 +71,7 @@ const HeroHeader: React.FC<HeroHeaderProps> = ({
             </div>
             <div className="hero-form-inputs flex flex-col">
               <label htmlFor="return-date" className="font-semibold">
-                Data de returnare
+                Date of return
               </label>
               <input
                 id="return-date"
@@ -86,7 +86,7 @@ const HeroHeader: React.FC<HeroHeaderProps> = ({
               ></input>
             </div>
             <button className="home-page-button" type="submit">
-              Profita acum
+              Take advantage now
             </button>
           </form>
         </div>

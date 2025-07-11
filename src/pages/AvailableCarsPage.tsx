@@ -5,6 +5,7 @@ import React from "react";
 import apiClient from "../components/API";
 import { Car } from "../components/ShowCarsSection";
 import HorizontalNonLinearStepper from "@/components/ui/HorizontalNonLinearStepper";
+import { Skeleton } from "@mui/material";
 
 // location: "Bucharest";
 // rentDate: "2025-06-27";
@@ -25,16 +26,20 @@ const AvailableCarsPage: React.FC = () => {
 
   const stepPage = -1;
 
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [allCars, setAllCars] = useState<Car[]>([]);
 
   useEffect(() => {
     const fetchedCars = async () => {
       try {
+        setIsLoading(true);
         const cars = await getCars();
         setAllCars(cars);
         return [];
       } catch (error) {
         console.error("No car");
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -51,6 +56,40 @@ const AvailableCarsPage: React.FC = () => {
   const handleReserveButton = (car: {}) =>
     navigate("/reserve-car", { state: { car, rentInputData } });
 
+  if (isLoading) {
+    return (
+      <section className="std-section">
+        <HorizontalNonLinearStepper
+          currentStep={stepPage} // You're on "Select car" step
+          completedSteps={availableCars ? [-1] : []} // Mark step 0 as completed if car is selected
+        />
+        <div>
+          <h2>Available Cars</h2>
+          <p>
+            <span className="fw-600">Rental Date:</span>{" "}
+            {rentInputData.rentDate}
+          </p>
+          <p>
+            <span className="fw-600">Date of return:</span>{" "}
+            {rentInputData.returnDate}
+          </p>
+          <p>
+            <span className="fw-600">Location:</span> {rentInputData.location}
+          </p>
+        </div>
+        <div className="available-cars-container">
+          <Skeleton variant="rectangular" width="320px" height="200px" />
+          <div className="available-car-card">
+            <Skeleton variant="text" width="60%" height="32px" />
+            <Skeleton variant="text" width="40%" height="20px" />
+            <Skeleton variant="rectangular" width="100%" height="100px" />
+            <Skeleton variant="rectangular" width="120px" height="40px" />
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <div className="std-section">
       <HorizontalNonLinearStepper
@@ -61,10 +100,10 @@ const AvailableCarsPage: React.FC = () => {
         <h2>Available Cars</h2>
         {/* Display the search criteria */}
         <p>
-          <span className="fw-600">Rent Date:</span> {rentInputData.rentDate}
+          <span className="fw-600">Rental Date:</span> {rentInputData.rentDate}
         </p>
         <p>
-          <span className="fw-600">Return Date:</span>{" "}
+          <span className="fw-600">Date of return:</span>{" "}
           {rentInputData.returnDate}
         </p>
         <p>
@@ -97,7 +136,7 @@ const AvailableCarsPage: React.FC = () => {
                   handleReserveButton(car);
                 }}
               >
-                Rezerva acum!
+                Book now!
               </button>
             </div>
           </div>

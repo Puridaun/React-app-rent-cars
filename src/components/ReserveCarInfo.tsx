@@ -40,10 +40,11 @@ const ReservedCarInfo: React.FC<ReservedCarInfoProps> = ({
             {car.brand} {car.model}
           </h3>
           <p>
-            <span className="fw-600">Rent Date:</span> {rentInputData.rentDate}
+            <span className="fw-600">Rental Date:</span>{" "}
+            {rentInputData.rentDate}
           </p>
           <p>
-            <span className="fw-600">Return Date:</span>{" "}
+            <span className="fw-600">Date of return:</span>{" "}
             {rentInputData.returnDate}
           </p>
           <p>
@@ -79,7 +80,7 @@ const ReservedCarInfo: React.FC<ReservedCarInfoProps> = ({
                 clickedBenefitPrice +
                 selectedFeaturesPrice}
             </span>{" "}
-            {car.currency} / {rentalDays} days
+            {car.currency} / {rentalDays} {rentalDays > 1 ? "DAYS" : "DAY"}
           </span>
         </div>
         <button className="reserve-button" type="button" onClick={action}>

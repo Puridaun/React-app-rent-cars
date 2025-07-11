@@ -106,23 +106,7 @@ const HorizontalNonLinearStepper: React.FC<HorizontalNonLinearStepperProps> = ({
         {steps.map((label, index) => (
           <Step key={label} completed={completed[index]}>
             {clickable && onStepClick ? (
-              <StepButton
-                color="inherit"
-                onClick={handleStep(index)}
-                sx={{
-                  // StepButton specific styling
-                  "& .MuiStepLabel-root": {
-                    cursor: "pointer",
-                  },
-                  "&:hover .MuiStepLabel-label": {
-                    color: "#1976d2",
-                  },
-                  "&:hover .MuiStepIcon-root": {
-                    transform: "scale(1.1)",
-                    transition: "transform 0.2s ease-in-out",
-                  },
-                }}
-              >
+              <StepButton color="inherit" onClick={handleStep(index)}>
                 {label}
               </StepButton>
             ) : (
