@@ -76,7 +76,7 @@ const CompleteReservationPage: React.FC = () => {
       <form onSubmit={onSubmit} className="complete-reservation-form">
         <div className="form-data ">
           {/* Last and First Name */}
-          <div className="flex  ">
+          <div className="data-inputs">
             <div className="flex flex-col">
               <label htmlFor="last-name">Last Name</label>
               <input
@@ -86,6 +86,11 @@ const CompleteReservationPage: React.FC = () => {
                 onChange={handleNameChange}
                 className={inputErrors.lastName ? "input-error" : ""}
               ></input>
+              {inputErrors.lastName ? (
+                <span className="text-red-500 font-medium">
+                  Incorrect characters to Last Name
+                </span>
+              ) : null}
             </div>
             <div className="flex flex-col">
               <label htmlFor="first-name">First Name</label>
@@ -96,6 +101,11 @@ const CompleteReservationPage: React.FC = () => {
                 onChange={handleNameChange}
                 className={inputErrors.firstName ? "input-error" : ""}
               ></input>
+              {inputErrors.firstName ? (
+                <span className="text-red-500 font-medium">
+                  Incorrect characters to First Name
+                </span>
+              ) : null}
             </div>
           </div>
           {/* Email */}
@@ -108,9 +118,12 @@ const CompleteReservationPage: React.FC = () => {
               onChange={handleNameChange}
               className={inputErrors.email ? "input-error" : ""}
             ></input>
+            {inputErrors.email ? (
+              <span className="text-red-500 font-medium">Incorrect Email</span>
+            ) : null}
           </div>
           {/* Age and number of driver id */}
-          <div className="flex ">
+          <div className="data-inputs">
             <div className="flex flex-col age-input">
               <label htmlFor="age">Age</label>
               <input
@@ -120,6 +133,9 @@ const CompleteReservationPage: React.FC = () => {
                 onChange={handleNameChange}
                 className={inputErrors.age ? "input-error" : ""}
               ></input>
+              {inputErrors.age ? (
+                <span className="text-red-500 font-medium">Incorrect age</span>
+              ) : null}
             </div>
             <div className="flex flex-col">
               <label htmlFor="driver-id">Driver Id</label>
@@ -130,6 +146,11 @@ const CompleteReservationPage: React.FC = () => {
                 onChange={handleNameChange}
                 className={inputErrors.driverId ? "input-error" : ""}
               ></input>
+              {inputErrors.driverId ? (
+                <span className="text-red-500 font-medium">
+                  Driver Id too short/long
+                </span>
+              ) : null}
             </div>
           </div>
         </div>

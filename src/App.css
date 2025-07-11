@@ -862,14 +862,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .form-data div {
     width: 100%;
     position: relative;
-    gap: 16px;
+    column-gap: 16px;
 }
 
+.data-inputs {
+    display: flex;
+    flex-direction: row;
+}
 
 .form-data label {
     position: absolute;
     left: 16px;
-    bottom: 38px;
+    top: -12px;
     padding-left: 8px;
     padding-right: 4px;
     background-color: var(--background-primary);
@@ -902,7 +906,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .text-message label {
     position: absolute;
     left: 16px;
-    top: -20px;
+    top: -12px;
     padding-left: 8px;
     padding-right: 4px;
     background-color: var(--background-primary);
@@ -983,7 +987,6 @@ textarea {
 
     .form-data label {
 
-        bottom: 34px;
         font-size: 14px;
     }
 
@@ -994,13 +997,14 @@ textarea {
 
     .text-message label {
 
-        top: -16px;
         font-size: 14px;
     }
 
     .text-message textarea {
         font-size: 14px;
     }
+
+
 }
 
 
@@ -1034,6 +1038,14 @@ textarea {
         font-weight: 500;
     }
 
+    .form-data {
+        width: 100%;
+    }
+
+    .text-message {
+
+        width: 100%;
+    }
 
 
     .price-tag {
@@ -1046,5 +1058,10 @@ textarea {
 
     .reserve-car-last-info {
         padding: 48px;
+    }
+
+    .data-inputs {
+        flex-direction: column;
+        row-gap: 16px;
     }
 }
