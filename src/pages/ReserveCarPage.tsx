@@ -148,7 +148,7 @@ const ReserveCarPage: React.FC = () => {
         <h3>Additional equipment</h3>
         <div key={car.id + 1} className="reserve-car-features">
           {car.features.map((feature: string[], index: number) => (
-            <div className="feature-container">
+            <div key={index} className="feature-container">
               <button
                 key={index}
                 type="button"

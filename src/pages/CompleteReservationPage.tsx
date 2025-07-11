@@ -64,6 +64,48 @@ const CompleteReservationPage: React.FC = () => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
+
+    if (formData.get("last-name") === "") {
+      setInputErrors((prev) => ({
+        ...prev,
+        lastName: true,
+      }));
+      window.scrollTo(0, 0);
+      return;
+    }
+    if (formData.get("first-name") === "") {
+      setInputErrors((prev) => ({
+        ...prev,
+        firstName: true,
+      }));
+      window.scrollTo(0, 0);
+      return;
+    }
+    if (formData.get("email") === "") {
+      setInputErrors((prev) => ({
+        ...prev,
+        email: true,
+      }));
+      window.scrollTo(0, 0);
+      return;
+    }
+    if (formData.get("age") === "") {
+      setInputErrors((prev) => ({
+        ...prev,
+        age: true,
+      }));
+      window.scrollTo(0, 0);
+      return;
+    }
+    if (formData.get("driver-id") === "") {
+      setInputErrors((prev) => ({
+        ...prev,
+        driveriId: true,
+      }));
+      window.scrollTo(0, 0);
+      return;
+    }
+
     event.currentTarget.reset();
 
     setInputErrors({
@@ -74,6 +116,7 @@ const CompleteReservationPage: React.FC = () => {
       driverId: false,
     });
     setStepPage(2);
+    alert("Car reservation complete!");
     console.log("Form cleared!");
   };
 
@@ -98,7 +141,7 @@ const CompleteReservationPage: React.FC = () => {
               ></input>
               {inputErrors.lastName ? (
                 <span className="text-red-500 font-medium">
-                  Incorrect characters to Last Name
+                  Incorrect Last Name or empty field
                 </span>
               ) : null}
             </div>
@@ -113,7 +156,7 @@ const CompleteReservationPage: React.FC = () => {
               ></input>
               {inputErrors.firstName ? (
                 <span className="text-red-500 font-medium">
-                  Incorrect characters to First Name
+                  Incorrect First Name or empty field
                 </span>
               ) : null}
             </div>
@@ -129,7 +172,9 @@ const CompleteReservationPage: React.FC = () => {
               className={inputErrors.email ? "input-error" : ""}
             ></input>
             {inputErrors.email ? (
-              <span className="text-red-500 font-medium">Incorrect Email</span>
+              <span className="text-red-500 font-medium">
+                Incorrect Email or empty
+              </span>
             ) : null}
           </div>
           {/* Age and number of driver id */}
@@ -144,7 +189,9 @@ const CompleteReservationPage: React.FC = () => {
                 className={inputErrors.age ? "input-error" : ""}
               ></input>
               {inputErrors.age ? (
-                <span className="text-red-500 font-medium">Incorrect age</span>
+                <span className="text-red-500 font-medium">
+                  Incorrect age or empty
+                </span>
               ) : null}
             </div>
             <div className="flex flex-col">
