@@ -173,6 +173,9 @@ Breakpoints:
     --color-sidebar-ring: var(--sidebar-ring);
 }
 
+.css-tso611-MuiStepper-root .MuiStepIcon-root.Mui-active {
+    color: var(--stepper-completed) !important;
+}
 
 [data-radix-popper-content-wrapper] {
     z-index: 9999 !important;
@@ -249,6 +252,20 @@ header {
     padding: 4px;
     font-weight: 600;
 }
+
+
+.input-error {
+    border: 2px solid var(--error) !important;
+}
+
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
 
 /* -----------------------Modern Navbar------------------ */
 

@@ -11,6 +11,7 @@ interface ReservedCarInfoProps {
   car: Car;
   rentalDays: number;
   text: string;
+  action: () => void;
 }
 
 // -------------------Start COMOPONENT --------------------------------------------------------------------------
@@ -21,14 +22,8 @@ const ReservedCarInfo: React.FC<ReservedCarInfoProps> = ({
   car,
   rentalDays,
   text,
+  action,
 }) => {
-  const navigate = useNavigate();
-  const toCompleteReservationPage = () => {
-    navigate(`/complete-reservation`, {
-      state: { car, rentInputData, getBenefitAndFeaturesPrice, rentalDays },
-    });
-  };
-
   const {
     clickedBenefit,
     selectedFeatures,
@@ -87,13 +82,7 @@ const ReservedCarInfo: React.FC<ReservedCarInfoProps> = ({
             {car.currency} / {rentalDays} days
           </span>
         </div>
-        <button
-          className="reserve-button"
-          type="button"
-          onClick={() => {
-            toCompleteReservationPage();
-          }}
-        >
+        <button className="reserve-button" type="button" onClick={action}>
           {text}
         </button>
       </div>

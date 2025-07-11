@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ReserveCarInfo from "../components/ReserveCarInfo";
 import React from "react";
@@ -40,7 +40,12 @@ export const benefits: Benefit[] = [
 const ReserveCarPage: React.FC = () => {
   const car = useLocation().state?.car; //Get data from previous page
   const rentInputData = useLocation().state?.rentInputData; //Get data from previous page
-
+  const navigate = useNavigate();
+  const toCompleteReservationPage = (): void => {
+    navigate(`/complete-reservation`, {
+      state: { car, rentInputData, getBenefitAndFeaturesPrice, rentalDays },
+    });
+  };
   const [getBenefitAndFeaturesPrice, setGetBenefitAndFeaturePrice] =
     useState<BenefitAndFeaturesPrice>({
       clickedBenefit: null,
@@ -165,6 +170,9 @@ const ReserveCarPage: React.FC = () => {
           car={car}
           rentalDays={rentalDays}
           text="Next Step"
+          action={() => {
+            toCompleteReservationPage();
+          }}
         />
       </section>
     </div>
