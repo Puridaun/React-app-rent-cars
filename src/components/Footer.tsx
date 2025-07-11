@@ -1,12 +1,4 @@
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
-  Facebook,
-  Twitter,
-  Instagram,
-} from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -38,16 +30,16 @@ export const Footer = () => {
           <h3 className="footer-title">Quick Links</h3>
           <ul className="footer-links">
             <li>
-              <a href="#about">About Us</a>
+              <a href="">About Us</a>
             </li>
             <li>
-              <a href="#fleet">Our Fleet</a>
+              <a href="">Our Fleet</a>
             </li>
             <li>
-              <a href="#pricing">Pricing</a>
+              <a href="">Pricing</a>
             </li>
             <li>
-              <a href="#locations">Locations</a>
+              <a href="">Locations</a>
             </li>
           </ul>
         </div>
@@ -57,17 +49,17 @@ export const Footer = () => {
           <h3 className="footer-title">Services</h3>
           <ul className="footer-links">
             <li>
-              <a href="#economy">Economy Cars</a>
+              <a href="">Economy Cars</a>
             </li>
             <li>
-              <a href="#luxury">Luxury Vehicles</a>
+              <a href="">Luxury Vehicles</a>
             </li>
 
             <li>
-              <a href="#long-term">Long-term Rental</a>
+              <a href="">Long-term Rental</a>
             </li>
             <li>
-              <a href="#corporate">Corporate Plans</a>
+              <a href="">Corporate Plans</a>
             </li>
           </ul>
         </div>
@@ -84,7 +76,9 @@ export const Footer = () => {
                 placeholder="Enter your email"
                 className="newsletter-input"
               />
-              <button className="newsletter-btn">Subscribe</button>
+              <button type="button" className="newsletter-btn">
+                Subscribe
+              </button>
             </div>
           </div>
         </div>
