@@ -1,6 +1,6 @@
 import axios from "axios";
 
-console.log('=== API CLIENT DEBUG ===');
+
 console.log('VITE_API_URL from env:', import.meta.env.VITE_API_URL);
 console.log('All import.meta.env:', import.meta.env);
 
