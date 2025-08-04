@@ -53,10 +53,12 @@ const ShowCarsSection: React.FC<ShowCarsSectionProps> = ({ rentInputData }) => {
   useEffect(() => {
     const fetchPromotedCars = async () => {
       try {
-        setIsLoading(true);
-      
+       
         const cars = await getPromotedCars();
         setPromotedCars(cars);
+         setIsLoading(true);console.log('=== API CLIENT DEBUG ===');
+console.log('VITE_API_URL from env:', import.meta.env.VITE_API_URL);
+console.log('All import.meta.env:', import.meta.env);
       } catch (error) {
        
         console.error("Error fetching promoted cars:", error);
