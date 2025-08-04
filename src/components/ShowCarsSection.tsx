@@ -54,8 +54,7 @@ const ShowCarsSection: React.FC<ShowCarsSectionProps> = ({ rentInputData }) => {
     const fetchPromotedCars = async () => {
       try {
         setIsLoading(true);
-        
-
+      
         const cars = await getPromotedCars();
         setPromotedCars(cars);
       } catch (error) {
