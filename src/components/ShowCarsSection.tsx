@@ -54,12 +54,13 @@ const ShowCarsSection: React.FC<ShowCarsSectionProps> = ({ rentInputData }) => {
     const fetchPromotedCars = async () => {
       try {
         setIsLoading(true);
-        console.log('VITE_API_URL:', import.meta.env.VITE_API_URL);
+        
 
         const cars = await getPromotedCars();
         setPromotedCars(cars);
       } catch (error) {
         console.error("Error fetching promoted cars:", error);
+        console.log('VITE_API_URL:', import.meta.env.VITE_API_URL);
       } finally {
         setIsLoading(false);
       }
