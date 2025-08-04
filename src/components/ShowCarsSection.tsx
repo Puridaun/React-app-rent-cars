@@ -87,7 +87,7 @@ const ShowCarsSection: React.FC<ShowCarsSectionProps> = ({ rentInputData }) => {
   }
 
   return (
-    <section className={`'every-page' ${promotedCars.length>0? 'nice':'h-full'}`}>
+    <section className='std-section'>
      {promotedCars.length>0?(<>
        {promotedCars.map((car, index) => (
         <div key={index} className="recomended-cars-container">
