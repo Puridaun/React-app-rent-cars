@@ -69,7 +69,7 @@ const ShowCarsSection: React.FC<ShowCarsSectionProps> = ({ rentInputData }) => {
   if (isLoading) {
     return (
       <section className="std-section">
-        <div className="recomended-cars-container">
+        <div id="recomended-cars" className="recomended-cars-container">
           <Skeleton variant="rectangular" width="320px" height="200px" />
           <div className="recomended-car-info">
             <Skeleton variant="text" width="60%" height="32px" />

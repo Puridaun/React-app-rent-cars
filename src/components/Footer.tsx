@@ -2,9 +2,9 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <div className="footer-container">
+    <div id="constact-section" className="footer-container">
       <div className="footer-content">
-        {/* Contact Section */}
+       
         <div className="footer-contact">
           <h3 className="footer-title">Contact Us</h3>
           <div className="contact-item">
@@ -25,7 +25,6 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Quick Links */}
         <div className="footer-section">
           <h3 className="footer-title">Quick Links</h3>
           <ul className="footer-links">
@@ -44,7 +43,7 @@ export const Footer = () => {
           </ul>
         </div>
 
-        {/* Services */}
+        
         <div className="footer-section">
           <h3 className="footer-title">Services</h3>
           <ul className="footer-links">
@@ -64,7 +63,7 @@ export const Footer = () => {
           </ul>
         </div>
 
-        {/* Social Media & Newsletter */}
+      
         <div className="footer-section">
           <h3 className="footer-title">Stay Connected</h3>
 
@@ -84,7 +83,7 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+     
       <div className="footer-bottom">
         <div className="footer-bottom-content">
           <p>&copy; 2025 CarRental Pro. All rights reserved.</p>

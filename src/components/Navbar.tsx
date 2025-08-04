@@ -5,10 +5,10 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"; // Use your custom component
+} from "@/components/ui/navigation-menu"; 
 import { ModeToggle } from "./ui/mode-toggle";
 import { useEffect, useState } from "react";
-import { Menu } from "lucide-react"; // For mobile menu icon
+import { Menu } from "lucide-react"; 
 
 const Navbar = () => {
   const [screenSize, setScreenSize] = useState<number>(window.innerWidth); // Use innerWidth instead of screen.width
@@ -33,8 +33,8 @@ const Navbar = () => {
           <div className="navbar-navigation">
             <ModeToggle />
             <a href="/">HOME</a>
-            <a href="">RECOMENDED</a>
-            <a href="">CONTACT</a>
+            <a href="#recomended-cars">RECOMENDED</a>
+            <a href="#constact-section">CONTACT</a>
           </div>
         ) : (
           // Mobile Navigation with Dropdown
