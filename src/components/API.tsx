@@ -6,7 +6,7 @@ console.log('All import.meta.env:', import.meta.env);
 
 const baseURL =
   (import.meta.env as any).VITE_API_URL ||
-  "https://backend-database-production-cabe.up.railway.app/api/v1/rent-cars";
+  "http://localhost:3000/api/v1/rent-cars";
 
 const apiClient = axios.create({
   baseURL: baseURL,
