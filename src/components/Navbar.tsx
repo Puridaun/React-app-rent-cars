@@ -52,10 +52,10 @@ const Navbar = () => {
                       <NavigationMenuLink href="/" className="w-auto w-fit">
                         <div className="text-sm font-medium ">HOME</div>
                       </NavigationMenuLink>
-                      <NavigationMenuLink href="" className="w-auto w-fit">
+                      <NavigationMenuLink href="#recomended-cars" className="w-auto w-fit">
                         <div className="text-sm font-medium ">RECOMANDED</div>
                       </NavigationMenuLink>
-                      <NavigationMenuLink href="" className="w-auto w-fit">
+                      <NavigationMenuLink href="#constact-section" className="w-auto w-fit">
                         <div className="text-sm font-medium ">CONTACT</div>
                       </NavigationMenuLink>
                     </div>

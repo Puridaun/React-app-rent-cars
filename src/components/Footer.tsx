@@ -8,10 +8,6 @@ export const Footer = () => {
         <div className="footer-contact">
           <h3 className="footer-title">Contact Us</h3>
           <div className="contact-item">
-            <MapPin className="contact-icon" size={18} />
-            <span>123 Main Street, Downtown, City 12345</span>
-          </div>
-          <div className="contact-item">
             <Phone className="contact-icon" size={18} />
             <span>+1 (555) 123-4567</span>
           </div>
@@ -19,21 +15,13 @@ export const Footer = () => {
             <Mail className="contact-icon" size={18} />
             <span>info@carrental.com</span>
           </div>
-          <div className="contact-item">
-            <Clock className="contact-icon" size={18} />
-            <span>Mon-Sun: 6:00 AM - 10:00 PM</span>
-          </div>
         </div>
 
         <div className="footer-section">
           <h3 className="footer-title">Quick Links</h3>
           <ul className="footer-links">
-            <li>
-              <a href="">About Us</a>
-            </li>
-            <li>
-              <a href="">Our Fleet</a>
-            </li>
+            
+          
             <li>
               <a href="">Pricing</a>
             </li>
@@ -52,13 +40,6 @@ export const Footer = () => {
             </li>
             <li>
               <a href="">Luxury Vehicles</a>
-            </li>
-
-            <li>
-              <a href="">Long-term Rental</a>
-            </li>
-            <li>
-              <a href="">Corporate Plans</a>
             </li>
           </ul>
         </div>
@@ -90,7 +71,7 @@ export const Footer = () => {
           <div className="footer-bottom-links">
             <a href="#privacy">Privacy Policy</a>
             <a href="#terms">Terms of Service</a>
-            <a href="#cookies">Cookie Policy</a>
+           
           </div>
         </div>
       </div>

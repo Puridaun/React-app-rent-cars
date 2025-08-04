@@ -56,9 +56,8 @@ const ShowCarsSection: React.FC<ShowCarsSectionProps> = ({ rentInputData }) => {
        
         const cars = await getPromotedCars();
         setPromotedCars(cars);
-         setIsLoading(true);console.log('=== API CLIENT DEBUG ===');
-console.log('VITE_API_URL from env:', import.meta.env.VITE_API_URL);
-console.log('All import.meta.env:', import.meta.env);
+        setIsLoading(true);
+
       } catch (error) {
        
         console.error("Error fetching promoted cars:", error);
@@ -88,8 +87,9 @@ console.log('All import.meta.env:', import.meta.env);
   }
 
   return (
-    <section className="std-section">
-      {promotedCars.map((car, index) => (
+    <section className={`'every-page' ${promotedCars.length>0? 'nice':'h-full'}`}>
+     {promotedCars.length>0?(<>
+       {promotedCars.map((car, index) => (
         <div key={index} className="recomended-cars-container">
           <img src={car.image} alt="car-image" />
           <div className="recomended-car-info">
@@ -115,6 +115,7 @@ console.log('All import.meta.env:', import.meta.env);
           </div>
         </div>
       ))}
+     </>):(<div className="no-vehicles-found" ><img src="/images/no-vehicles-found.png"/></div>)}
     </section>
   );
 };

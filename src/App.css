@@ -185,6 +185,20 @@ Breakpoints:
     z-index: 9999 !important;
 }
 
+.no-vehicles-found {
+    border-radius: 4px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 112px;
+}
+
+.no-vehicles-found img {
+    width: 40%;
+    border-radius: 16px;
+}
+
 .navbar-container {
     position: relative;
     border-bottom: 1px solid var(--border-color);
@@ -1090,7 +1104,7 @@ textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem;
+    padding: 0.1rem;
     font-size: 0.9rem;
     color: var(--text-color-on-primary-bg);
 }
